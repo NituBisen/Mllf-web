@@ -63,7 +63,7 @@ const InvestmentJourney = ({ backgroundImageUrl }) => {
   return (
    <section
   ref={sectionRef}
-  className="overflow-hidden relative mx-auto w-full max-w-[1332px] min-h-[631px]"
+  className="overflow-hidden relative mx-auto w-full max-w-[1550px] min-h-[631px]"
   style={{
     backgroundImage: `url(${journeyBg})`,
     backgroundSize: "cover",
@@ -72,7 +72,7 @@ const InvestmentJourney = ({ backgroundImageUrl }) => {
   }}
 >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 max-w-[1550px] bg-black/60" />
 
       {/* Radial gradient for depth */}
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/40" />
@@ -91,13 +91,13 @@ const InvestmentJourney = ({ backgroundImageUrl }) => {
             {/* Badge */}
             <motion.div variants={itemVariants}>
               <div
-                className="inline-flex mb-12 px-6 py-3 w-fit rounded-full border lg:mb-16"
+                className="inline-flex mb-12 px-6 py-3 w-fit rounded-full lg:mb-16"
                 style={{
                  
                 }}
               >
                 
-                <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#C9A24B]/10 rounded-full border-[#C9A24B]/20 border">
+                <div className="inline-flex items-center gap-2 px-5 py-2 bg-[#C9A24B]/10 rounded-full">
   <span className="h-1.5 w-1.5 bg-[#C9A24B] rounded-full" />
 
   <span className="font-['Gilroy',_sans-serif] text-[11px] font-light uppercase tracking-[0.2em] text-[#E2BF57]">
@@ -110,7 +110,7 @@ const InvestmentJourney = ({ backgroundImageUrl }) => {
             {/* Heading */}
             <motion.h1
               variants={itemVariants}
-              className="mb-8 text-4xl font-light text-white leading-tight text-[48px] sm:text-[28px] lg:mb-9 xl:text-[48px]"
+              className="mb-8 text-[26px] font-light text-white leading-tight sm:text-[28px] lg:mb-9 xl:text-[48px]"
               style={{
                 fontFamily: 'Cinzel, serif',
                 maxWidth: '535px',

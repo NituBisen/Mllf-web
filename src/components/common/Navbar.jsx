@@ -9,7 +9,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = [ 'Home', 'About', 'Tokenomics', 'Roadmap', 'Security', 'FAQ'];
+  const navLinks = [ 'Home', 'About', 'Tokenomics', 'ContactUs',  'FAQ'];
 
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -66,15 +66,23 @@ const Navbar = () => {
             {navLinks.map((link, i) => (
              <motion.button
   key={link}
-  onClick={() => {
-    if (link === "Home") {
-      navigate("/");
-    } else {
-      document
-        .getElementById(link.toLowerCase())
-        ?.scrollIntoView({ behavior: "smooth" });
-    }
-  }}
+onClick={() => {
+  if (link === "Home") {
+    navigate("/");
+  } else if (link === "FAQ") {
+    navigate("/faq");
+  }else if (link === "About") {
+    navigate("/About");
+    } else if (link === "Tokenomics"){
+    navigate("/Tokenomics");
+    } else if (link === "ContactUs"){
+    navigate("/ContactUs");
+  } else {
+    document
+      .getElementById(link.toLowerCase())
+      ?.scrollIntoView({ behavior: "smooth" });
+  }
+}}
   variants={linkVariants}
   custom={i + 1}
   initial="hidden"
@@ -93,6 +101,7 @@ const Navbar = () => {
   custom={navLinks.length + 1}
   initial="hidden"
   animate="visible"
+  onClick={() => navigate("/presale")}
   className="hidden items-center gap-2 px-3 py-2 font-gilroy text-[16px] font-medium text-black bg-[linear-gradient(270deg,_#C08E22_0%,_#FDED99_51.93%,_#C08E22_100%)] rounded-sm shadow-[0_4px_20px_rgba(192,142,34,0.25)] transition-all duration-300 hover:scale-105 hover:brightness-110 hover:shadow-[0_8px_30px_rgba(253,237,153,0.35)] md:flex"
 >
   Buy MLLF
@@ -115,29 +124,37 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="border-t border-white/10 md:hidden"
+            className="font-gilroy border-t border-white/10 md:hidden"
           >
             <div className="px-4 py-4 space-y-3">
               {navLinks.map((link) => (
                 <button
   key={link}
-  onClick={() => {
-    setMobileMenuOpen(false);
+ onClick={() => {
+  setMobileMenuOpen(false);
 
-    if (link === "Home") {
-      navigate("/");
-    } else {
-      document
-        .getElementById(link.toLowerCase())
-        ?.scrollIntoView({ behavior: "smooth" });
-    }
-  }}
-  className="block py-2 w-full text-left text-white text-sm font-medium transition-colors hover:text-yellow-400"
+  if (link === "Home") {
+    navigate("/");
+  } else if (link === "FAQ") {
+    navigate("/faq");
+  }else if (link === "About") {
+    navigate("/About");
+    } else if (link === "Tokenomics"){
+    navigate("/Tokenomics");
+    } else if (link === "ContactUs"){
+    navigate("/ContactUs");
+  } else {
+    document
+      .getElementById(link.toLowerCase())
+      ?.scrollIntoView({ behavior: "smooth" });
+  }
+}}
+  className="block py-2 w-full text-left text-white text-sm font-medium transition-colors font hover:text-yellow-400"
 >
   {link}
 </button>
               ))}
-              <button className="flex items-center justify-center gap-2 px-6 py-2.5 mt-4 w-full text-black font-semibold text-sm bg-yellow-400 rounded-lg transition-all duration-300 hover:bg-yellow-500">
+              <button className="flex items-center justify-center gap-2 px-6 py-2.5 mt-4 w-full text-black font-semibold text-sm bg-[linear-gradient(270deg,_#C08E22_0%,_#FDED99_51.93%,_#C08E22_100%)] rounded-lg transition-all duration-300 hover:bg-yellow-500">
                 Buy MLLF
                 <ArrowRight size={16} />
               </button>

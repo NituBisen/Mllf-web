@@ -6,7 +6,7 @@ import resortImage from "../../assets/Read/resort.jpg";
 import villaImage from "../../assets/Read/villa.jpg";
 
 /* -------------------------------------------------------------------------- */
-/*  Reveal.jsx — generic scroll/mount reveal wrapper                          */
+/*  Reveal.jsx — generic scroll/mount reveal wrapper (UNCHANGED)              */
 /* -------------------------------------------------------------------------- */
 const Reveal = ({
   children,
@@ -40,13 +40,14 @@ const Reveal = ({
 
 /* -------------------------------------------------------------------------- */
 /*  FloatingCircle.jsx — rotating badge with circular text + arrow            */
+/*  (same SVG/text/arrow, only size + position changed via className)         */
 /* -------------------------------------------------------------------------- */
 const FloatingCircle = () => {
   const text = "MY LUXURIES LIFE • MY LUXURIES LIFE • ";
 
   return (
     <motion.div
-      className="z-20 absolute flex items-center justify-center h-[170px] w-[170px] bg-black rounded-full -top-10 -left-10 md:h-[170px]"
+      className="z-20 absolute flex items-center justify-center h-24 w-24 w-28 w-36 w-[180px] bg-black rounded-full -top-0 -left-5 sm:h-28 md:h-36 lg:h-[180px]"
       style={{ border: "1.5px solid #C08E22" }}
       animate={{ rotate: 360 }}
       transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
@@ -71,7 +72,7 @@ const FloatingCircle = () => {
 
       {/* center arrow */}
       <motion.div
-        className="z-10 relative flex items-center justify-center h-11 w-11 bg-black rounded-full border-[#C08E22]/60 border"
+        className="z-10 relative flex items-center justify-center h-10 w-10 w-11 bg-black rounded-full border-[#C08E22]/60 border md:h-11"
         whileHover={{ x: 4, y: -4 }}
         transition={{ type: "spring", stiffness: 300, damping: 15 }}
       >
@@ -98,68 +99,67 @@ const FloatingCircle = () => {
 /* -------------------------------------------------------------------------- */
 const OpportunitySection = () => {
   return (
-    <section className="mx-auto w-full max-w-[1500px] bg-black">
-      <div
-        className="mx-auto px-6 pt-[80px] pb-[80px] pb-[100px] pt-[100px] pb-[120px] max-w-[1500px] sm:px-10 md:pt-[100px] lg:px-12"
-      >
-        <div className="flex flex-col items-center items-start gap-16 gap-[56px] lg:flex-row">
-          {/* ---------------------------------------------------------------- */}
-          {/* LEFT SIDE                                                        */}
-          {/* ---------------------------------------------------------------- */}
-          <div className="w-full text-center text-left lg:w-[160%]">
-            {/* Badge */}
-            <Reveal direction="down">
-              <span
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full"
-                style={{
-                  backgroundColor: "rgba(192,142,34,0.12)",
-                  border: "1px solid rgba(192,142,34,0.30)",
-                }}
-              >
-                <span
-                  className="h-[6px] w-[6px] rounded-full"
-                  style={{ backgroundColor: "#C08E22" }}
-                />
-                <span
-                  className="uppercase"
-                  style={{
-                    fontFamily: "'Gilroy', sans-serif",
-                    fontSize: "12px",
-                    letterSpacing: "0.18em",
-                    color: "#C08E22",
-                  }}
-                >
-                  Why Real Estate Needs Blockchain
-                </span>
-              </span>
-            </Reveal>
+    <section className="w-full bg-black">
+      <div className="mx-auto px-4 px-12 max-w-[1550px] sm:px-6 md:px-8 lg:py-4">
+        {/* ------------------------------------------------------------------ */}
+        {/* BADGE + HEADING — now full width, spans above the two columns      */}
+        {/* ------------------------------------------------------------------ */}
+        <Reveal direction="down">
+          <span
+            className="inline-flex items-center gap-2 px-4 py-2 mb-10 rounded-full sm:mb-14"
+            style={{
+              backgroundColor: "rgba(192,142,34,0.12)",
+            }}
+          >
+            <span
+              className="h-1.5 w-1.5 rounded-full"
+              style={{ backgroundColor: "#C08E22" }}
+            />
+            <span
+              className="text-xs uppercase sm:text-sm"
+              style={{
+                fontFamily: "'Gilroy', sans-serif",
+                fontSize: "11px",
+                letterSpacing: "0.18em",
+                color: "#C08E22",
+              }}
+            >
+              Why Real Estate Needs Blockchain
+            </span>
+          </span>
+        </Reveal>
 
-            {/* Heading */}
-            <Reveal direction="up" delay={0.1}>
-              <h2
-                className="mt-6 max-w-[880px] text-[34px] sm:text-[48px] lg:text-[70px] xl:text-[70px]"
-                style={{
-                  fontFamily: "'Cinzel', serif",
-                  fontWeight: 300,
-                  color: "#F5EFE7",
-                  lineHeight: 1.08,
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                The Opportunity We're Solving
-              </h2>
-            </Reveal>
+        <Reveal direction="up" delay={0.1}>
+          <h2
+            className="mb-10 max-w-[880px] text-[30px] leading-[1.08] sm:mb-12 md:mb-14 lg:text-[70px] xl:text-[70px]"
+            style={{
+              fontFamily: "'Cinzel', serif",
+              fontWeight: 300,
+              color: "#F5EFE7",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            The Opportunity We're Solving
+          </h2>
+        </Reveal>
 
-            {/* Image + floating circle */}
-            <div className="relative flex justify-center mt-10 lg:justify-start">
+        {/* ------------------------------------------------------------------ */}
+        {/* TWO COLUMN ROW — images + description card                         */}
+        {/* ------------------------------------------------------------------ */}
+        <div className="flex flex-col items-center items-start gap-10 gap-8 sm:gap-12 lg:flex-row">
+          {/* -------------------------------------------------------------- */}
+          {/* LEFT SIDE - RESORT IMAGE                                       */}
+          {/* -------------------------------------------------------------- */}
+          <div className="flex flex-col items-center w-full w-1/2 lg:items-start">
+            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-3xl">
               <Reveal
                 direction="scale"
                 delay={0.2}
-                className="relative w-full max-w-[680px]"
+                className="relative w-full"
               >
                 <motion.svg
                   viewBox="0 0 608 406"
-                  className="h-auto w-full"
+                  className="h-auto w-full drop-shadow-lg"
                   whileHover="hover"
                 >
                   <defs>
@@ -187,21 +187,24 @@ const OpportunitySection = () => {
                   />
                 </motion.svg>
 
-                {/* Floating circle overlapping the top-left of the image */}
-                <FloatingCircle />
+                {/* Floating circle overlapping the top-left of the image, sitting outside it */}
+                <div className="hidden lg:block">
+  <FloatingCircle />
+</div>
               </Reveal>
             </div>
           </div>
 
-          {/* ---------------------------------------------------------------- */}
-          {/* RIGHT SIDE                                                       */}
-          {/* ---------------------------------------------------------------- */}
-        <div className="w-full text-center lg:w-[100%]">
-            <Reveal direction="scale" delay={0.3}>
-              <div className="h-[380px] w-full sm:h-[520px] lg:h-[606px]">
+          {/* -------------------------------------------------------------- */}
+          {/* RIGHT SIDE - VILLA IMAGE + OVERLAPPING DESCRIPTION CARD        */}
+          {/* -------------------------------------------------------------- */}
+          <div className="relative flex flex-col items-center w-full w-1/2 -mt-4 sm:gap-8 lg:items-start">
+            {/* Villa Image */}
+            <Reveal direction="scale" delay={0.3} className="w-full">
+              <div className="mx-auto max-w-[629px] sm:h-96 md:h-[440px] lg:h-[606px]">
                 <motion.svg
                   viewBox="0 0 630 606"
-                  className="h-full w-full"
+                  className="h-full w-full drop-shadow-lg"
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
                   style={{ transformOrigin: "center" }}
@@ -230,20 +233,15 @@ const OpportunitySection = () => {
               </div>
             </Reveal>
 
-            {/* Bottom description card */}
+            {/* Description Card — absolute overlap on desktop, static on tablet/mobile */}
             <Reveal
-              direction="up"
+              direction="bottom"
               delay={0.4}
-              className="z-10 relative mx-auto w-[200px] sm:w-[85%] lg:w-[410px]"
+              className="left-0 w-full w-[480px] max-w-[480px] lg:absolute xl:mt-105"
             >
-              <div
-               
-              >
-                {/* curved cut-out corner accent */}
-                <div
-                  
-                />
+              <div className="px-6 py-6 py-8 py-10 bg-black rounded-2xl rounded-tr-3xl rounded-bl-none sm:px-8 lg:px-10">
                 <p
+                  className="mx-auto max-w-[410px] text-sm leading-relaxed text-center !text-[#D0D0D0] sm:text-base lg:text-left"
                   style={{
                     fontFamily: "'Gilroy', sans-serif",
                     color: "#D0D0D0",

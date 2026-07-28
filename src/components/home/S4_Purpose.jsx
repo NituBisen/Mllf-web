@@ -39,20 +39,20 @@ const PropertyClassesSection = () => {
     <section className="overflow-hidden relative py-20 w-full bg-black md:py-24 lg:py-28">
       {/* Background Image */}
 <div
-  className="z-0 absolute inset-0 mx-auto max-w-[1440px] bg-cover bg-center bg-no-repeat"
+  className="z-0 absolute inset-0 mx-auto max-w-[1550px] bg-cover bg-center bg-no-repeat"
   style={{
     backgroundImage: `url(${goldMeshBg})`,
   }}
 />
 
 {/* Overlay */}
-<div className="z-[1] absolute inset-0 mx-auto max-w-[1440px] bg-black/60" />
+<div className="z-[1] absolute inset-0 mx-auto max-w-[1550px] bg-black/60" />
 
 {/* Content */}
-<div className="z-10 relative mx-auto max-w-[1440px]">
+<div className="z-10 relative mx-auto max-w-[1550px]">
   {/* Content */}
 </div>
-      <div className="z-10 relative mx-auto px-6 max-w-[1440px] sm:px-8 lg:px-12">
+      <div className="z-10 relative mx-auto px-6 max-w-[1550px] sm:px-8 lg:px-12">
         {/* Top area */}
         <div className="flex flex-col items-start justify-between gap-8 gap-6 text-center text-left lg:flex-row">
           <div className="lg:max-w-[750px]">

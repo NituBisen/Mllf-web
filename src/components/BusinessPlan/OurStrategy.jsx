@@ -57,7 +57,7 @@ const Button = ({ variant = "primary", children, icon: Icon = ArrowRight }) => {
 const Hero = () => {
   return (
     <section className="w-full bg-black">
-      <div className="mx-auto px-4 py-6 max-w-[1600px] sm:px-6 lg:px-8 xl:px-10">
+      <div className="mx-auto px-4 max-w-[1600px] sm:px-6 lg:px-8 xl:px-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -151,7 +151,7 @@ const Hero = () => {
             </div>
 
             {/* Right stats panel */}
-           <div className="flex flex-col gap-10 w-full md:self-end w-[250px] lg:w-[260px] xl:w-[280px]">
+           <div className="flex flex-col gap-10 w-full w-[250px] md:self-end lg:w-[260px] xl:w-[280px]">
   {stats.map((stat, i) => (
     <motion.div
       key={stat.label}

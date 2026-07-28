@@ -49,7 +49,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="overflow-hidden relative pt-16 w-full min-h-screen bg-black sm:pt-20">
+    <div className="overflow-hidden relative pt-4 w-full min-h-screen bg-black sm:pt-20 lg:pt-16">
       {/* Mobile-only background (desktop image is md:flex below and untouched) */}
       <div className="z-0 absolute inset-0 flex justify-center md:hidden">
         <img
@@ -57,7 +57,7 @@ const Hero = () => {
           alt="Hero"
           className="object-cover object-top w-full h-full opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black" />
+       <div className="absolute inset-0 hidden bg-gradient-to-b from-black/60 via-black/70 to-black lg:block" />
       </div>
 
       {/* Background Image */}
@@ -91,7 +91,7 @@ const Hero = () => {
         <motion.div variants={itemVariants} className="flex justify-center mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FDED9926] rounded-full border sm:px-4">
             <div className="w-2 h-2 bg-yellow-400 rounded-full" />
-            <span className="text-[#E2BF57] text-[10px] font-gilroy font-extralight tracking-widest uppercase sm:text-[12px]">
+            <span className="text-[#E2BF57] text-[12px] font-gilroy font-extralight tracking-widest uppercase sm:text-[12px]">
               Next-Generation Real Estate Assets
             </span>
           </div>
@@ -100,7 +100,7 @@ const Hero = () => {
         {/* Heading */}
         <motion.h1
           variants={itemVariants}
-          className="mb-4 text-center font-thin text-[20px] text-[#EDE8DF] leading-tight sm:text-[24px] md:text-[40px] lg:text-[70px]"
+          className="mb-4 text-center font-light text-[20px] text-[#EDE8DF] leading-tight sm:text-[24px] md:text-[40px] lg:text-[70px]"
           style={{
             fontFamily: 'cinzel',
             letterSpacing: '0.02em',
@@ -114,25 +114,26 @@ const Hero = () => {
         {/* Description */}
         <motion.p
           variants={itemVariants}
-         className="mx-auto px-2 max-w-[840px] text-center font-gilroy text-[#C9C9C9] text-[13px] text-[16px] sm:text-[14px] md:text-[15px] lg:mb-6"
+         className="mx-auto px-2 mb-5 max-w-[840px] text-center font-gilroy text-[#C9C9C9] text-[13px] text-[16px] sm:text-[14px] md:text-[15px] lg:mb-6"
         >
           MLLF transforms premium real estate into secure, tradable digital tokens — giving investors fractional ownership, real rental income, and true liquidity, all on-chain.
         </motion.p>
 
        <motion.div
   variants={buttonVariants}
-  className="flex flex-wrap items-center justify-center gap-3 px-2 px-4 sm:gap-5 lg:mb-20"
+  className="flex flex-wrap items-center justify-center gap-3 px-2 px-4 mb-20 sm:gap-5 md:gap-2 lg:gap-2"
 >
   {/* Primary */}
   <button
-    className="flex items-center justify-center gap-3 px-2 h-10 font-gilroy font-medium text-[14px] text-black bg-[linear-gradient(270deg,_#C08E22_0%,_#FDED99_51.93%,_#C08E22_100%)] rounded-lg transition-all duration-300 group hover:brightness-110 sm:text-[16px]"
-  >
-    Invest now
-    <ArrowRight
-      size={20}
-      className="transition-transform duration-300 group-hover:translate-x-1"
-    />
-  </button>
+  onClick={() => navigate("/presale")}
+  className="flex items-center justify-center gap-3 px-2 h-10 font-gilroy font-medium text-[14px] text-black text-[16px] bg-[linear-gradient(270deg,_#C08E22_0%,_#FDED99_51.93%,_#C08E22_100%)] rounded-lg transition-all duration-300 group hover:brightness-110"
+>
+  Invest now
+  <ArrowRight
+    size={20}
+    className="transition-transform duration-300 group-hover:translate-x-1"
+  />
+</button>
 
   {/* Secondary */}
   <div className="inline-block p-[1px] bg-[linear-gradient(270deg,_#C08E22_0%,_#FDED99_51.93%,_#C08E22_100%)] rounded-lg">
@@ -153,16 +154,19 @@ const Hero = () => {
 
   {/* Tertiary */}
   <div className="inline-block p-[1px] bg-[linear-gradient(270deg,_#C08E22_0%,_#FDED99_51.93%,_#C08E22_100%)] rounded-lg">
-  <button className="flex items-center justify-center gap-3 px-4 h-10 bg-[#000000] rounded-lg transition-all duration-300 group hover:bg-[#322815]">
-    <span className="font-gilroy font-medium text-[14px] text-transparent bg-[linear-gradient(270deg,_#C08E22_0%,_#FDED99_51.93%,_#C08E22_100%)] bg-clip-text sm:text-[16px]">
-      Explore Token
-    </span>
+  <button
+  onClick={() => navigate("/tokenomics")}
+  className="flex items-center justify-center gap-3 px-4 h-10 bg-[#000000] rounded-lg transition-all duration-300 group hover:bg-[#322815]"
+>
+  <span className="font-gilroy font-medium text-[14px] text-transparent bg-[linear-gradient(270deg,_#C08E22_0%,_#FDED99_51.93%,_#C08E22_100%)] bg-clip-text sm:text-[16px]">
+    Explore Token
+  </span>
 
-    <ArrowRight
-      size={20}
-      className="text-[#E3B33A] transition-transform duration-300 group-hover:translate-x-1"
-    />
-  </button>
+  <ArrowRight
+    size={20}
+    className="text-[#E3B33A] transition-transform duration-300 group-hover:translate-x-1"
+  />
+</button>
 </div>
 </motion.div>
 </motion.div>
@@ -177,7 +181,7 @@ const Hero = () => {
 
 
       {/* Statistics Bar */}
-<motion.div className="z-20 relative left-0 bottom-[-20px] mt-0 w-full md:absolute lg:mt-8">
+<motion.div className="z-20 relative left-0 mt-0 mt-8 w-full md:absolute lg:py-10 xl:bottom-[-20px]">
   <div className="mx-auto px-6 max-w-[1600px] lg:px-12">
     <div className="grid grid-cols-1 gap-6 gap-0 md:grid-cols-3">
       {/* Stat 1 */}
@@ -186,7 +190,7 @@ const Hero = () => {
         custom={0}
         initial="hidden"
         animate="visible"
-        className="flex items-center justify-center gap-3 py-4 py-8 md:justify-start"
+        className="flex items-center justify-center gap-3 md:justify-start lg:py-8 xl:py-4"
       >
         <h3 className="font-gilroy text-[24px] font-bold text-[#D9A72B] sm:text-[30px]">
           500+
@@ -203,7 +207,7 @@ const Hero = () => {
         custom={1}
         initial="hidden"
         animate="visible"
-        className="flex items-center justify-center gap-3 py-4 md:py-8"
+        className="flex items-center justify-center gap-3 lg:py-8 xl:py-4"
       >
         <h3 className="font-gilroy text-[24px] font-bold text-[#D9A72B] sm:text-[30px]">
           $12M+
@@ -220,7 +224,7 @@ const Hero = () => {
         custom={2}
         initial="hidden"
         animate="visible"
-        className="flex items-center justify-center gap-3 py-4 py-8 md:justify-end"
+        className="flex items-center justify-center gap-3 md:justify-end lg:py-8 xl:py-4"
       >
         <h3 className="font-gilroy text-[24px] font-bold text-[#D9A72B] sm:text-[30px]">
           8,000+

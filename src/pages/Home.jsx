@@ -5,6 +5,7 @@ import S2Explore from "../components/home/S2_Explore";
 import S3Institution from "../components/home/S3_Institutional";
 import S4Purpose from "../components/home/S4_Purpose";
 import S5Form from "../components/home/S5_From";
+import Tokeno from "../components/home/Tokeno";
 import S6Ecosystem from "../components/home/S6_Ecosystem";
 import S7Luxury from "../components/home/S7_LuxuryReal";
 import Footer from "../components/common/Footer";
@@ -33,16 +34,19 @@ export default function Home() {
       <Reveal delay={0.4}>
         <S5Form />
       </Reveal>
-
-      <Reveal delay={0.5}>
-        <S6Ecosystem />
+       <Reveal delay={0.5}>
+        <Tokeno />
       </Reveal>
 
       <Reveal delay={0.6}>
-        <S7Luxury />
+        <S6Ecosystem />
       </Reveal>
 
       <Reveal delay={0.7}>
+        <S7Luxury />
+      </Reveal>
+
+      <Reveal delay={0.8}>
         <Footer />
       </Reveal>
     </main>
